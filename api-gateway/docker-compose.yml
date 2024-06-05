@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  api-gateway:
+    image: api-gateway:0.0.1
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - eureka-net
+
+networks:
+  eureka-net:
+    driver: bridge
